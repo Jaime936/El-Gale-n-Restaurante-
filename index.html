@@ -27,10 +27,10 @@
         body { background-color: #F5F5F5 !important; color: #3E2723 !important; }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .btn-rustic { background: #E65100 !important; color: white !important; border: 1px solid #E65100; transition: 0.3s; padding: 1rem 2rem; display: inline-block; }
+        .btn-rustic { background: #E65100 !important; color: white !important; border: 1px solid #E65100; padding: 1rem 2rem; display: inline-block; transition: 0.3s; text-align: center; }
         .btn-rustic:hover { background: transparent !important; color: #E65100 !important; transform: scale(1.05); }
         .menu-item-dot { flex-grow: 1; border-bottom: 1px dotted rgba(62, 39, 35, 0.3); margin: 0 10px 5px 10px; }
-        #main-nav { top: 0 !important; left: 0; right: 0; position: fixed; width: 100%; z-index: 100; }
+        #main-nav { top: 0 !important; left: 0; right: 0; position: fixed; width: 100%; z-index: 100; transition: 0.5s; }
         .nav-scrolled { background: rgba(245, 245, 245, 0.98) !important; backdrop-filter: blur(10px); box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
         h1, h2, h3, h4, .font-serif { font-family: 'Libre Baskerville', serif !important; }
     </style>
@@ -39,13 +39,13 @@
 </head>
 <body class="font-sans overflow-x-hidden">
 
-    <nav id="main-nav" class="transition-all duration-500 border-b border-oak/5 bg-transparent">
+    <nav id="main-nav" class="fixed w-full z-50 transition-all duration-500 border-b border-oak/5 top-0">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <i data-lucide="utensils" class="text-terracotta w-8 h-8"></i>
                 <div class="flex flex-col text-white" id="nav-logo-text">
-                    <span class="text-2xl font-bold leading-none">EL GALEÓN</span>
-                    <span class="text-[10px] uppercase tracking-[0.3em] font-bold">Restaurante Tradicional</span>
+                    <span class="text-2xl font-serif font-bold leading-none">EL GALEÓN</span>
+                    <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta">Tradición y Brasas</span>
                 </div>
             </div>
             <div class="hidden lg:flex items-center gap-8 text-[11px] uppercase tracking-[0.2em] font-bold text-white" id="nav-links">
@@ -53,6 +53,7 @@
                 <a href="#historia" class="hover:text-terracotta transition-colors">Historia</a>
                 <a href="#carta" class="hover:text-terracotta transition-colors">Carta</a>
                 <a href="#reservas" class="hover:text-terracotta transition-colors">Reservas</a>
+                <a href="#sedes" class="hover:text-terracotta transition-colors">Sedes</a>
             </div>
         </div>
     </nav>
@@ -65,17 +66,20 @@
         <div class="relative z-10 text-center px-6">
             <div class="reveal active">
                 <h1 class="text-6xl md:text-8xl text-white mb-8">Sabor a <br><span class="italic text-terracotta">Leña y Piedra</span></h1>
-                <a href="#reservas" class="btn-rustic uppercase font-bold tracking-widest shadow-2xl">RESERVAR MESA</a>
+                <a href="#reservas" class="btn-rustic font-bold uppercase tracking-widest shadow-2xl">RESERVAR MESA</a>
             </div>
         </div>
     </section>
 
     <section id="historia" class="py-32 px-6 bg-parchment">
-        <div class="max-w-7xl mx-auto text-center">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div class="reveal">
                 <h2 class="text-terracotta text-xs uppercase tracking-[0.5em] font-bold mb-4">Desde 1979</h2>
                 <h3 class="text-5xl font-serif italic mb-8">Nuestra Historia</h3>
-                <p class="text-lg text-oak/80 italic max-w-3xl mx-auto">Nacimos en 1979 con una ilusión: que nuestra pasión por la cocina y por el ocio se contagiase a todos nuestros clientes.</p>
+                <p class="text-lg text-oak/80 italic leading-relaxed">Nacimos en 1979 con una ilusión: que nuestra pasión por la cocina y por el ocio se contagiase a todos y cada uno de nuestros clientes.</p>
+            </div>
+            <div class="reveal">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1200" class="rounded shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000">
             </div>
         </div>
     </section>
@@ -97,8 +101,7 @@
                 navLinks.style.color = 'white';
             }
         });
-        
-        // Animaciones de scroll
+
         const reveals = document.querySelectorAll('.reveal');
         window.addEventListener('scroll', () => {
             reveals.forEach(el => {
