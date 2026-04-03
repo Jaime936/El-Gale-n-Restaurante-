@@ -8,6 +8,28 @@
     
     <!-- Tailwind CSS (via Vite) -->
 <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        oak: '#3E2723',
+                        terracotta: '#BF360C',
+                        parchment: '#F5F5F5',
+                        olive: '#556B2F',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .btn-rustic { background: #BF360C; color: white; transition: all 0.3s; border: 1px solid #BF360C; }
+        .btn-rustic:hover { background: transparent; color: #BF360C; }
+        .nav-scrolled { background: rgba(245, 245, 245, 0.95); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .rustic-border { border: 1px solid rgba(62, 39, 35, 0.1); }
+    </style>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
