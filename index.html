@@ -6,15 +6,14 @@
     <title>Restaurante El Galeón | Tradición, Brasas y Rabo de Toro</title>
     <meta name="description" content="El Galeón: Especialistas en cocina tradicional, carnes a la piedra y nuestro famoso rabo de toro. Sedes en Móstoles y Alcorcón.">
     
-    <!-- Tailwind CSS (via Vite) -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         oak: '#3E2723',
-                        terracotta: '#BF360C',
+                        terracotta: '#E65100', // NARANJA BRASA INTENSO
                         parchment: '#F5F5F5',
                         olive: '#556B2F',
                     },
@@ -34,26 +33,28 @@
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         
-        /* Botones */
-        .btn-rustic { background: #BF360C !important; color: white !important; border: 1px solid #BF360C; padding: 1rem 2rem; display: inline-block; }
-        .btn-rustic:hover { background: transparent !important; color: #BF360C !important; }
+        /* Botones NARANJAS */
+        .btn-rustic { background: #E65100 !important; color: white !important; border: 1px solid #E65100; padding: 1rem 2rem; display: inline-block; transition: 0.3s; text-align: center; }
+        .btn-rustic:hover { background: transparent !important; color: #E65100 !important; transform: scale(1.05); }
         
         /* Puntitos del menú */
         .menu-item-dot { flex-grow: 1; border-bottom: 1px dotted rgba(62, 39, 35, 0.3); margin: 0 10px 5px 10px; }
         
-        /* Navegación */
-        .nav-scrolled { background: rgba(245, 245, 245, 0.95); backdrop-filter: blur(10px); }
-        .text-terracotta { color: #BF360C !important; }
+        /* Navegación - ARREGLO PARA QUE NO FLOTE */
+        #main-nav { top: 0 !important; left: 0; right: 0; }
+        .nav-scrolled { background: rgba(245, 245, 245, 0.98) !important; backdrop-filter: blur(10px); box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        
+        .text-terracotta { color: #E65100 !important; }
+        .bg-terracotta { background-color: #E65100 !important; }
+        .border-terracotta { border-color: #E65100 !important; }
     </style>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="font-sans selection:bg-terracotta selection:text-white overflow-x-hidden">
 
-    <!-- Navigation -->
-    <nav id="main-nav" class="fixed w-full z-50 transition-all duration-500 border-b border-oak/5">
+    <nav id="main-nav" class="fixed w-full z-50 transition-all duration-500 border-b border-oak/5 top-0">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <i data-lucide="utensils" class="text-terracotta w-8 h-8"></i>
@@ -78,26 +79,24 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-parchment flex flex-col items-center justify-center gap-8 text-3xl font-serif hidden">
-        <button class="absolute top-6 right-6 text-oak" id="menu-close">
-            <i data-lucide="x" class="w-10 h-10"></i>
-        </button>
-        <a href="#" class="mobile-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); closeMenu(); return false;">Inicio</a>
-        <a href="#historia" class="mobile-link">Historia</a>
-        <a href="#carta" class="mobile-link">Carta</a>
-        <a href="#especiales" class="mobile-link">Eventos</a>
-        <a href="#reservas" class="mobile-link">Reservas</a>
-        <a href="#sedes" class="mobile-link">Sedes</a>
-    </div>
-
-    <!-- Hero Section -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=1920" alt="Rabo de Toro El Galeón" class="w-full h-full object-cover brightness-[0.4] scale-105">
             <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-parchment"></div>
         </div>
         
+        <div class="relative z-10 text-center px-6 max-w-5xl">
+            <div class="reveal">
+                <span class="text-white/80 text-sm uppercase tracking-[0.5em] font-bold mb-6 block">Móstoles • Alcorcón</span>
+                <h1 class="text-6xl md:text-[8rem] font-serif text-white mb-8 leading-[0.85]">
+                    Sabor a <br><span class="italic text-terracotta">Leña y Piedra</span>
+                </h1>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="#reservas" class="btn-rustic px-14 py-6 rounded-sm text-lg font-bold uppercase tracking-widest shadow-2xl">RESERVAR MESA</a>
+                </div>
+            </div>
+        </div>
+    </section>
         <div class="relative z-10 text-center px-6 max-w-5xl">
             <div class="reveal">
                 <span class="text-white/80 text-sm uppercase tracking-[0.5em] font-bold mb-6 block">Móstoles • Alcorcón</span>
