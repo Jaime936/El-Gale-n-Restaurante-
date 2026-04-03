@@ -8,7 +8,7 @@
     
     <!-- Tailwind CSS (via Vite) -->
 <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+   <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -17,12 +17,30 @@
                         terracotta: '#BF360C',
                         parchment: '#F5F5F5',
                         olive: '#556B2F',
+                    },
+                    fontFamily: {
+                        serif: ['Libre Baskerville', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     <style>
+        /* Animaciones para que los textos aparezcan suavemente */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Estilo de los botones */
+        .btn-rustic { background: #BF360C; color: white; transition: all 0.3s; border: 1px solid #BF360C; }
+        .btn-rustic:hover { background: transparent; color: #BF360C; transform: scale(1.05); }
+        
+        /* Los puntitos del menú que unen plato y precio */
+        .menu-item-dot { flex-grow: 1; border-bottom: 1px dotted rgba(62, 39, 35, 0.2); margin: 0 10px 5px 10px; }
+        
+        /* Fondo del menú cuando haces scroll */
+        .nav-scrolled { background: rgba(245, 245, 245, 0.95); backdrop-filter: blur(10px); }
+    </style>
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .btn-rustic { background: #BF360C; color: white; transition: all 0.3s; border: 1px solid #BF360C; }
