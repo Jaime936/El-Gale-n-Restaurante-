@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso Legal - Restaurante El Galeón</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @theme {
+            --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+            --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+            --color-parchment: #FDFBF7;
+            --color-oak: #3E2723;
+            --color-terracotta: #A0522D;
+        }
+        @layer base {
+            body {
+                @apply bg-parchment text-oak font-sans leading-relaxed;
+            }
+            h1, h2, h3 {
+                @apply font-serif;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="py-6 px-10 border-b border-oak/10 flex justify-between items-center">
+        <a href="/" class="flex items-center gap-3">
+            <i data-lucide="utensils" class="text-terracotta w-8 h-8"></i>
+            <span class="text-2xl font-serif font-bold uppercase tracking-tighter">EL GALEÓN</span>
+        </a>
+        <a href="/" class="text-xs uppercase tracking-widest font-bold text-oak/60 hover:text-terracotta transition-colors">Volver al Inicio</a>
+    </nav>
+
+    <main class="max-w-4xl mx-auto py-20 px-6">
+        <h1 class="text-5xl italic mb-12 text-center">Aviso Legal</h1>
+        
+        <div class="space-y-10 text-oak/80">
+            <section>
+                <h2 class="text-2xl font-bold text-oak mb-4">1. Datos Identificativos</h2>
+                <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se reflejan los siguientes datos:</p>
+                <ul class="list-disc pl-6 mt-4 space-y-2">
+                    <li><strong>Titular:</strong> Restaurante El Galeón (Nombre Fiscal de la Empresa)</li>
+                    <li><strong>NIF:</strong> B-00000000</li>
+                    <li><strong>Domicilio:</strong> Calle Río Segura, 24, 28935 Móstoles, Madrid</li>
+                    <li><strong>Teléfono:</strong> 91 646 56 07</li>
+                    <li><strong>Email:</strong> contacto@restauranteelgaleon.com</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-oak mb-4">2. Usuarios</h2>
+                <p>El acceso y/o uso de este portal de Restaurante El Galeón atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas. Las citadas Condiciones serán de aplicación independientemente de las Condiciones Generales de Contratación que en su caso resulten de obligado cumplimiento.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-oak mb-4">3. Uso del Portal</h2>
+                <p>www.restauranteelgaleon.com proporciona el acceso a multitud de informaciones, servicios, programas o datos (en adelante, "los contenidos") en Internet pertenecientes a Restaurante El Galeón o a sus licenciantes a los que el USUARIO pueda tener acceso. El USUARIO asume la responsabilidad del uso del portal.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-oak mb-4">4. Propiedad Intelectual e Industrial</h2>
+                <p>Restaurante El Galeón por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.).</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-bold text-oak mb-4">5. Exclusión de Garantías y Responsabilidad</h2>
+                <p>Restaurante El Galeón no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos o lesivos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="py-12 border-t border-oak/10 text-center">
+        <p class="text-[10px] uppercase tracking-[0.5em] font-bold text-oak/20">
+            &copy; 2026 Restaurante El Galeón • Todos los derechos reservados
+        </p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "name": "Restaurante El Galeón | Tradición y Brasas",
+  "description": "Cocina tradicional, carnes a la piedra y rabo de toro en Móstoles y Alcorcón. Un ambiente rústico y acogedor para disfrutar de la mejor gastronomía castellana.",
+  "requestFramePermissions": ["geolocation"]
+}
